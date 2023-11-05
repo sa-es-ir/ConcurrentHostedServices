@@ -2,20 +2,23 @@
 
 public class HostedServiceA : IHostedService
 {
+    private readonly ILogger<HostedServiceA> _logger;
+
+    public HostedServiceA(ILogger<HostedServiceA> logger)
+    {
+        _logger = logger;
+    }
+
     public async Task StartAsync(CancellationToken cancellationToken)
     {
-        //for (var i = 1; i <= 10; i++)
-        //{
-        //    Console.WriteLine($"{i} sec waiting");
-        //    await Task.Delay(10000);
-        //}
-        Console.WriteLine("HostedServiceA start method called");
-        await Task.Delay(10000);
+        _logger.LogInformation("HostedServiceA start method called");
+        await Task.Delay(5000);
 
     }
 
     public Task StopAsync(CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        _logger.LogInformation("HostedServiceA stop method called");
+        return Task.CompletedTask;
     }
 }
