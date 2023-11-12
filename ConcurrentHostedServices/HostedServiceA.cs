@@ -11,8 +11,11 @@ public class HostedServiceA : IHostedService
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
-        _logger.LogInformation("HostedServiceA start method called");
-        await Task.Delay(5000);
+        _logger.LogInformation("HostedServiceA start is running ...");
+
+        await Task.Delay(10000);
+
+        _logger.LogInformation("HostedServiceA start is done");
 
     }
 
