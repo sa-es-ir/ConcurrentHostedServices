@@ -5,14 +5,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHostedService<HostedServiceA>();
 builder.Services.AddHostedService<HostedServiceB>();
 
-//builder.Services.AddHostedService<HostedServiceLifecycle>();
-
 //builder.Services.Configure<HostOptions>(x =>
 //{
 //    x.ServicesStartConcurrently = true;
 //    x.ServicesStopConcurrently = true;
 //});
 
+//builder.Services.AddHostedService<HostedServiceLifecycle>();
 
 var app = builder.Build();
 
