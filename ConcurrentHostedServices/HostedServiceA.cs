@@ -13,7 +13,7 @@ public class HostedServiceA : IHostedService
     {
         _logger.LogInformation("HostedServiceA start is running ...");
 
-        await Task.Delay(10000);
+        await Task.Delay(15000);
 
         _logger.LogInformation("HostedServiceA start is done");
 
